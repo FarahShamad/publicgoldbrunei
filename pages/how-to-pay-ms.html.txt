@@ -1,0 +1,13 @@
+<h2>How to Make Payment</h2>
+<p>You can purchase gold through bank transfer or online payment after placing an order.</p>
+
+<p><strong>Public View:</strong></p>
+<ul>
+  <li>Step 1: Choose product</li>
+  <li>Step 2: Contact for confirmation</li>
+  <li>Step 3: Proceed with payment</li>
+</ul>
+
+<p><em>Full detailed steps (with screenshots) are for registered members only.</em></p>
+
+<p><a href="../customer.html" class="btn">Login to View Full Steps</a></p>

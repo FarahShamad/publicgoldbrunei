@@ -1,0 +1,7 @@
+<h2>Ar-Rahnu</h2>
+<p>Ar-Rahnu is an Islamic pawn broking service that provides short-term financing using gold as collateral.</p>
+
+<p>Customers can place gold with Ar-Rahnu branches to obtain cash while the gold remains theirs.</p>
+
+<p>More detailed guidance is available for members only.</p>
+<p><a href="../customer.html" class="btn">Login to View Full Info</a></p>

@@ -1,0 +1,7 @@
+<h2>Zakat on Gold</h2>
+<p>Zakat is a purification of wealth and is wajib when gold savings reach the nisab and have been held for one hijri year.</p>
+
+<p><strong>Nisab:</strong> 85 grams of gold.</p>
+<p><strong>Rate:</strong> 2.5% (1/40) of total gold value.</p>
+
+<p><a href="../customer.html" class="btn">Zakat Calculator (Members Only)</a></p>
