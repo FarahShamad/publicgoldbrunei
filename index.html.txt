@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Public Gold Brunei — Save gold with Farah Shamad</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">Save gold with Farah Shamad</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pages/about.html">About</a></li>
+      <li><a href="pages/zakat.html">Zakat</a></li>
+      <li><a href="pages/ar-rahnu.html">Ar-Rahnu</a></li>
+      <li><a href="pages/how-to-pay.html">How to Make Payment</a></li>
+      <li><a href="pages/contact.html">Contact</a></li>
+      <li><a href="customer.html" class="btn">Login</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Save gold with Farah Shamad</h1>
+    <p>Trusted Public Gold dealer — PG00721726</p>
+    <a href="pages/products.html" class="cta">See Products</a>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Why save gold?</h2>
+      <p>Gold protects savings from inflation. Start from as low as BND 35.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Save gold with Farah Shamad — PG00721726</p>
+  </footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

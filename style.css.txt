@@ -1,0 +1,105 @@
+/* Theme Colors */
+:root {
+  --gold: #D4AF37;
+  --black: #000000;
+  --white: #ffffff;
+  --purple: #6A0DAD;
+}
+
+/* Basic Styling */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #fafafa;
+  color: #222;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: var(--black);
+}
+
+.logo {
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--white);
+  padding: 6px 10px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* Buttons */
+.btn {
+  background: var(--purple);
+  padding: 6px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.btn:hover {
+  background: #550a8a;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(180deg, #fff7e6, var(--gold));
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.cta {
+  background: var(--black);
+  color: var(--gold);
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.cta:hover {
+  opacity: 0.8;
+}
+
+/* Sections */
+.intro {
+  padding: 30px 20px;
+  background: var(--white);
+  max-width: 900px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+}

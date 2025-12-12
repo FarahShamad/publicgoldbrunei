@@ -1,0 +1,12 @@
+<h2>Gold Products</h2>
+<p>Browse our popular Public Gold items.</p>
+
+<ul>
+  <li>1g Gold Bar</li>
+  <li>5g Gold Bar</li>
+  <li>10g Gold Bar</li>
+  <li>50g Gold Bar</li>
+  <li>100g Gold Bar</li>
+</ul>
+
+<p><em>Prices shown upon request or inside customer dashboard.</em></p>
