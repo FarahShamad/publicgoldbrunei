@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Zakat Calculator</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<h2>Zakat Calculator (Gold)</h2>
+
+<p>Gold price per gram (BND):</p>
+<input type="number" id="goldPrice" placeholder="e.g. 95">
+
+<p>Total gold owned (grams):</p>
+<input type="number" id="goldWeight" placeholder="e.g. 100">
+
+<br><br>
+<button id="calculate">Calculate Zakat</button>
+
+<h3 id="result"></h3>
+
+<script>
+  const SUPABASE_URL = "https://goniwtfdwropotdnzctp.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdvbml3dGZkd3JvcG90ZG56Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU1NzU5MjUsImV4cCI6MjA4MTE1MTkyNX0.KD2Ntgyvt1z9l5_2J-KD0cL9or7qLWzhcK0PA3VJ0eQ";
+
+  const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
+
+  // 🔐 PROTECT PAGE (members only)
+  supabaseClient.auth.getSession().then(({ data }) => {
+    if (!data.session) {
+      window.location.href = "customer.html";
+    }
+  });
+
+  document.getElementById("calculate").onclick = () => {
+    const goldPrice = parseFloat(document.getElementById("goldPrice").value);
+    const goldWeight = parseFloat(document.getElementById("goldWeight").value);
+
+    if (!goldPrice || !goldWeight) {
+      document.getElementById("result").innerText =
+        "Please fill in all fields.";
+      return;
+    }
+
+    const totalValue = goldPrice * goldWeight;
+    const zakat = totalValue * 0.025;
+
+    document.getElementById("result").innerText =
+      "Zakat payable: BND " + zakat.toFixed(2);
+  };
+</script>
+
+</body>
+</html>
