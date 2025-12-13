@@ -10,17 +10,28 @@
 <body>
 
 <h2>Member Dashboard</h2>
-<p>Welcome. You are logged in.</p>
+<p class="subtitle">
+  Welcome to your Public Gold Brunei member portal.
+</p>
 
-<nav>
-  <ul>
-    <li><a href="zakat.html">Zakat (Calculator)</a></li>
-    <li><a href="ar-rahnu-member.html">Ar-Rahnu</a></li>
-    <li><a href="payment-member.html">How to Make Payment</a></li>
-  </ul>
-</nav>
+<div class="dashboard-grid">
+  <a class="card" href="zakat.html">
+    <h3>Zakat</h3>
+    <p>Gold zakat calculation & guidance</p>
+  </a>
 
-<button id="logout">Logout</button>
+  <a class="card" href="ar-rahnu-member.html">
+    <h3>Ar-Rahnu</h3>
+    <p>Exclusive information for customers</p>
+  </a>
+
+  <a class="card" href="payment-member.html">
+    <h3>Payment</h3>
+    <p>Step-by-step payment instructions</p>
+  </a>
+</div>
+
+<button id="logout" class="logout-btn">Logout</button>
 
 <script>
   const SUPABASE_URL = "https://goniwtfdwropotdnzctp.supabase.co";
