@@ -20,14 +20,19 @@
   <button type="submit">Login</button>
 </form>
 
-<p id="message"></p>
+<p id="message" style="color:red;font-weight:bold;"></p>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+  document.getElementById("message").innerText = "Login success, checking approval...";
+
   const SUPABASE_URL = "https://goniwtfdwropotdnzctp.supabase.co";
   const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdvbml3dGZkd3JvcG90ZG56Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU1NzU5MjUsImV4cCI6MjA4MTE1MTkyNX0.KD2Ntgyvt1z9l5_2J-KD0cL9or7qLWzhcK0PA3VJ0eQ";
 
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  const supabaseClient = supabase.createClient(
+    SUPABASE_URL, 
+    SUPABASE_ANON_KEY
+  );
 
   document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -65,3 +70,4 @@
 
 </body>
 </html>
+
