@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Member Dashboard | Public Gold Brunei</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Member Dashboard</h2>
+<p>Welcome. You are logged in.</p>
+
+<nav>
+  <ul>
+    <li><a href="zakat.html">Zakat (Calculator)</a></li>
+    <li><a href="ar-rahnu-member.html">Ar-Rahnu</a></li>
+    <li><a href="payment-member.html">How to Make Payment</a></li>
+  </ul>
+</nav>
+
+<button id="logout">Logout</button>
+
+<script>
+  const SUPABASE_URL = "https://goniwtfdwropotdnzctp.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdvbml3dGZkd3JvcG90ZG56Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU1NzU5MjUsImV4cCI6MjA4MTE1MTkyNX0.KD2Ntgyvt1z9l5_2J-KD0cL9or7qLWzhcK0PA3VJ0eQ";
+
+  const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
+
+  // 🔐 Protect dashboard
+  supabaseClient.auth.getSession().then(({ data }) => {
+    if (!data.session) {
+      window.location.href = "customer.html";
+    }
+  });
+
+  document.getElementById("logout").onclick = async () => {
+    await supabaseClient.auth.signOut();
+    window.location.href = "customer.html";
+  };
+</script>
+
+</body>
+</html>
