@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Customer Login | Public Gold Brunei</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Customer Login</h2>
+
+<form id="loginForm">
+  <label>PG Code</label><br>
+  <input type="text" id="pg_code" required><br><br>
+
+  <label>Password</label><br>
+  <input type="password" id="password" required><br><br>
+
+  <button type="submit">Login</button>
+</form>
+
+<p id="message"></p>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://goniwtfdwropotdnzctp.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdvbml3dGZkd3JvcG90ZG56Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU1NzU5MjUsImV4cCI6MjA4MTE1MTkyNX0.KD2Ntgyvt1z9l5_2J-KD0cL9or7qLWzhcK0PA3VJ0eQ";
+
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const pgCode = document.getElementById("pg_code").value.trim();
+    const password = document.getElementById("password").value;
+
+    // login using pg_code as email alias
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: pgCode + "@publicgoldbrunei.com",
+      password: password
+    });
+
+    if (error) {
+      document.getElementById("message").innerText = "Login failed.";
+      return;
+    }
+
+    // check approval
+    const { data: customer } = await supabase
+      .from("customers")
+      .select("approved")
+      .eq("pg_code", pgCode)
+      .single();
+
+    if (!customer || !customer.approved) {
+      document.getElementById("message").innerText = "Account pending approval.";
+      await supabase.auth.signOut();
+      return;
+    }
+
+    window.location.href = "member.html";
+  });
+</script>
+
+</body>
+</html>

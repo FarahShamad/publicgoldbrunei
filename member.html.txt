@@ -1,0 +1,4 @@
+<h2>Welcome, Member</h2>
+<p>You are logged in successfully.</p>
+
+<p>This page is for approved customers only.</p>
