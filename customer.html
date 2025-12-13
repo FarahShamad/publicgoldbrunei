@@ -41,7 +41,7 @@
     const password = document.getElementById("password").value;
 
     // login using pg_code as email alias
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
       email: pgCode + "@publicgoldbrunei.com",
       password: password
     });
@@ -52,7 +52,7 @@
     }
 
     // check approval
-    const { data: customer } = await supabase
+    const { data: customer } = await supabaseClient
       .from("customers")
       .select("approved")
       .eq("pg_code", pgCode)
@@ -60,7 +60,7 @@
 
     if (!customer || !customer.approved) {
       document.getElementById("message").innerText = "Account pending approval.";
-      await supabase.auth.signOut();
+      await supabaseClient.auth.signOut();
       return;
     }
 
@@ -70,4 +70,5 @@
 
 </body>
 </html>
+
 
