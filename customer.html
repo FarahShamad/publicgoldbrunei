@@ -36,6 +36,7 @@
 
   document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
+    console.log("Login button clicked");
 
     const pgCode = document.getElementById("pg_code").value.trim();
     const password = document.getElementById("password").value;
@@ -70,5 +71,6 @@
 
 </body>
 </html>
+
 
 
