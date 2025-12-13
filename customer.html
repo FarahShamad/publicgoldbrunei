@@ -24,13 +24,14 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  document.getElementById("message").innerText = "Login success, checking approval...";
+  // DEBUG: confirm JS is running
+  document.getElementById("message").innerText = "Script loaded";
 
   const SUPABASE_URL = "https://goniwtfdwropotdnzctp.supabase.co";
   const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdvbml3dGZkd3JvcG90ZG56Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU1NzU5MjUsImV4cCI6MjA4MTE1MTkyNX0.KD2Ntgyvt1z9l5_2J-KD0cL9or7qLWzhcK0PA3VJ0eQ";
 
   const supabaseClient = supabase.createClient(
-    SUPABASE_URL, 
+    SUPABASE_URL,
     SUPABASE_ANON_KEY
   );
 
@@ -41,18 +42,19 @@
     const pgCode = document.getElementById("pg_code").value.trim();
     const password = document.getElementById("password").value;
 
-    // login using pg_code as email alias
     const { data, error } = await supabaseClient.auth.signInWithPassword({
       email: pgCode + "@publicgoldbrunei.com",
       password: password
     });
 
     if (error) {
-      document.getElementById("message").innerText = "Login failed.";
+      document.getElementById("message").innerText = "Login failed";
       return;
     }
 
-    // check approval
+    document.getElementById("message").innerText =
+      "Login success, checking approval...";
+
     const { data: customer } = await supabaseClient
       .from("customers")
       .select("approved")
@@ -60,7 +62,8 @@
       .single();
 
     if (!customer || !customer.approved) {
-      document.getElementById("message").innerText = "Account pending approval.";
+      document.getElementById("message").innerText =
+        "Account pending approval";
       await supabaseClient.auth.signOut();
       return;
     }
@@ -69,8 +72,10 @@
   });
 </script>
 
+
 </body>
 </html>
+
 
 
 
