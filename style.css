@@ -160,18 +160,18 @@ footer {
 
 .top-nav {
   background: #000;
-  color: #fff;
-  padding: 12px 0;
+  width: 100%;
 }
 
 .nav-container {
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 12px 20px;
 }
+
 
 .brand a {
   color: var(--gold);
@@ -190,4 +190,5 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+
 
