@@ -146,3 +146,36 @@ footer {
   border-radius: 6px;
   cursor: pointer;
 }
+
+.top-nav {
+  background: #000;
+  color: #fff;
+  padding: 12px 0;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.brand a {
+  color: var(--gold);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
